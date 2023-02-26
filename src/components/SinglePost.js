@@ -10,8 +10,8 @@ const Show = () => {
     }
     return (
         <div style={div}>
-            <h1>{post.subject}</h1>
-            <h2>{post.details}</h2>
+            <h1>{post.name}</h1>
+            <h2>{post.description}</h2>
             <Link to="/">
                 <button>Go Back</button>
             </Link>
