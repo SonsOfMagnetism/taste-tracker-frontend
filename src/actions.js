@@ -7,16 +7,16 @@ export const createAction = async ({request}) => {
     const newRestaurant = {
         name: formData.get("name"),
         description: formData.get("description"),
-        url: formData.get("url")
+        url: formData.get("url"),
     }
     await fetch(URL + "/restaurants/", {
         method: "post",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         },
         body: JSON.stringify(newRestaurant)
     })
-    return redirect("/")
+    return redirect("/");
 }
 
 export const updateAction = async ({request, params}) => {
@@ -27,19 +27,19 @@ export const updateAction = async ({request, params}) => {
         description: formData.get("description"),
         url: formData.get("url")
     }
-    await fetch(URL + `/restaurants/${id}`, {
+    await fetch(URL + `/restaurants/${id}/`, {
         method: "put",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(updatedRestaurants)
     })
-    return redirect(`/restaurants/${id}`)
+    return redirect(`/restaurants/${id}/`)
 }
 
 export const deleteAction = async ({params}) => {
     const id = params.id
-    await fetch(URL + `restaurants/${id}`, {
+    await fetch(URL + `/restaurants/${id}/`, {
         method: "delete"
     })
     return redirect("/")

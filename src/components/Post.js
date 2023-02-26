@@ -13,6 +13,7 @@ const Post = ({post}) => {
                 <h1>{post.name}</h1>
             </Link>
             <h2>{post.description}</h2>
+            <Link to={post.url}>{post.url}</Link>
         </div>
     )
 }

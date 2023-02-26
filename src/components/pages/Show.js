@@ -1,6 +1,6 @@
 import { Link, useLoaderData, Form } from "react-router-dom";
 
-const Show = () => {
+const Show = (props) => {
     const post = useLoaderData()
     const div = {
         textAlign: "center",
@@ -12,7 +12,7 @@ const Show = () => {
         <div style={div}>
             <h1>{post.name}</h1>
             <h2>{post.description}</h2>
-            <h2>Create a Restaurant</h2>
+            <Link to={post.url}>{post.url}</Link>
             <Form action={`/update/${post.id}`} method="post">
                 <input
                     type="text"
@@ -25,6 +25,12 @@ const Show = () => {
                     name="description"
                     placeholder="Type Descripttion Here"
                     defaultValue={post.description}
+                />
+                <input
+                    type="text"
+                    name="url"
+                    placeholder="Type URL Here"
+                    defaultValue={post.url}
                 />
                 <button>Update Restaurant</button>
             </Form>
