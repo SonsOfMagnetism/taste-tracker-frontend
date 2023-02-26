@@ -1,9 +1,18 @@
 import Post from "../components/Post"
-import { useLoaderData } from "react-router-dom"
+import {Form, useLoaderData} from "react-router-dom"
 
 const Index = (props) => {
-    const restaurants = useLoaderData()
-    return restaurants.map((post) => <Post post={post} key={post.id}/>)
+  const restaurants = useLoaderData()
+  return <>
+  <h2>Create a Restaurant</h2>
+  <Form action ="/create" method="post">
+    <input type="text" name="name" placeholder="Restaurant Name"/>
+    <input type="text" name="description" placeholder="Description of Restaurant"/>
+    <input type="text" name="link" placeholder="URL of Restaurant"/>
+    <button>Create New Restaurant</button>
+  </Form>
+  {restaurants.map((post) => <Post post={post} key={post.id}/>)}
+  </>
 }
 
 export default Index
