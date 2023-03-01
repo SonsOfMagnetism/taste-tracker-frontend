@@ -1,38 +1,64 @@
 .App {
   text-align: center;
+  background-image: url('https://r4.wallpaperflare.com/wallpaper/611/939/665/hot-pot-soup-food-wallpaper-f6d9f4d9990b56fd96545786e13dbc3d.jpg');
+  color: rgb(59, 144, 14);
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.show-card {
+  border: 3px solid;
+  width: 80%;
+  margin: 30px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.card {
+  border: 3px solid;
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 5rem;
+  margin: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button {
+  background: rgb(148, 51, 32);
+}
+
+h1 {
+  color: rgb(173, 60, 37);
+}
+
+h2 {
+  color: rgb(173, 60, 37);
+}
+
+h3 {
+  color: rgb(173, 60, 37);
+}
+
+a {
+  color: rgb(173, 60, 37);
+}
+
+.form-title {
+  color:rgb(173, 60, 37);
+}
+
+input::placeholder {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="text"] {
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input:focus {
+  outline: none !important;
+  border: 2px solid green !important;
 }

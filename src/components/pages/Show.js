@@ -2,16 +2,10 @@ import { Link, useLoaderData, Form } from "react-router-dom";
 
 const Show = (props) => {
     const post = useLoaderData()
-    const div = {
-        textAlign: "center",
-        border: "3px solid green",
-        width: "80%",
-        margin: "30px auto"
-    }
     return (
-        <div style={div}>
+        <div className="show-card">
             <h1>{post.name}</h1>
-            <h2>{post.description}</h2>
+            <h4>{post.description}</h4>
             <Link to={post.url}>{post.url}</Link>
             <Form action={`/update/${post.id}`} method="post">
                 <input
@@ -23,8 +17,9 @@ const Show = (props) => {
                 <input
                     tyoe="text"
                     name="description"
-                    placeholder="Type Descripttion Here"
+                    placeholder="Type Description Here"
                     defaultValue={post.description}
+                    style={{color: 'white'}}
                 />
                 <input
                     type="text"
